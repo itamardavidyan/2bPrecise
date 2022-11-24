@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './app.routes';
+import { EmployeeListComponent } from './routes/employee-list/employee-list.component';
 
 @NgModule({
-	declarations: [AppComponent, NxWelcomeComponent],
+	declarations: [AppComponent, EmployeeListComponent],
 	imports: [
 		BrowserModule,
 		RouterModule.forRoot(appRoutes, {
