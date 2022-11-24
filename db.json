@@ -1,0 +1,16 @@
+{
+    "employees": [
+		{
+			"id": 1,
+			"firstName": "Itamar",
+			"lastName": "Davidyan",
+			"position": "Fullstack Developer"
+		},
+		{
+			"id": 2,
+			"firstName": "Alon",
+			"lastName": "Davidyan",
+			"position": "Senior Fullstack Developer"
+		}
+	]
+}
