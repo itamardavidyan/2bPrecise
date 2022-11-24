@@ -9,19 +9,9 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>Itamar Davidyan</td>
-			<td>Fullstack Developer</td>
-			<td><input type='button' value='View' /></td>
-		</tr>
-		<tr>
-			<td>Itamar Davidyan</td>
-			<td>Fullstack Developer</td>
-			<td><input type='button' value='View' /></td>
-		</tr>
-		<tr>
-			<td>Itamar Davidyan</td>
-			<td>Fullstack Developer</td>
+		<tr *ngFor="let employee of employees$ | async">
+			<td>{{ employee.firstName + ' ' + employee.lastName }}</td>
+			<td>{{ employee.position }}</td>
 			<td><input type='button' value='View' /></td>
 		</tr>
 	</tbody>
