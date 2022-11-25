@@ -1,24 +1,38 @@
 {
     "employees": [
-		{
-			"id": 1,
-			"firstName": "Itamar",
-			"lastName": "Davidyan",
-			"position": "Fullstack Developer",
-			"managerId": 2
-		},
-		{
-			"id": 2,
-			"firstName": "Alon",
-			"lastName": "Davidyan",
-			"position": "Senior Fullstack Developer"
-		},
-		{
-			"id": 3,
-			"firstName": "Matan",
-			"lastName": "Davidyan",
-			"position": "Analyst",
-			"managerId": 2
-		}
-	]
+        {
+            "id": 1,
+            "firstName": "Itamar",
+            "lastName": "Davidyan",
+            "position": "Fullstack Developer",
+            "managerId": 2
+        },
+        {
+            "id": 2,
+            "firstName": "Alon",
+            "lastName": "Davidyan",
+            "position": "Senior Fullstack Developer"
+        },
+        {
+            "id": 3,
+            "firstName": "Matan",
+            "lastName": "Davidyan",
+            "position": "Analyst",
+            "managerId": 2
+        }
+    ],
+    "reports": [
+        {
+            "managerId": 2,
+            "employeeId": 3,
+            "text": "1",
+            "date": "2022-11-25T21:56:16.067Z"
+        },
+        {
+            "managerId": 2,
+            "employeeId": 3,
+            "text": "s",
+            "date": "2022-11-25T21:56:26.015Z"
+        }
+    ]
 }

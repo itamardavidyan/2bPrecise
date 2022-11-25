@@ -20,4 +20,8 @@ export class EmployeesService {
 	public getEmployeeManager(employeeId: number): Observable<any> {
 		return this.http.get(`http://localhost:3333/api/employees/${employeeId}/manager`)
 	}
+
+	public createReport(employeeId: number, text: string): Observable<any> {
+		return this.http.post(`http://localhost:3333/api/employees/${employeeId}/report`, { text });
+	}
 }

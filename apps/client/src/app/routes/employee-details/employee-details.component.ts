@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { EmployeesService } from '../../services/employees.service';
+import { MatDialog } from '@angular/material/dialog';
+import { CreateReportComponent } from '../../components/dialogs/create-report/create-report.component';
 
 @Component({
 	selector: 'precise-employee-details',
@@ -13,7 +15,9 @@ export class EmployeeDetailsComponent {
 	employeeId!: number;
 	employee$!: Observable<any>;
 
-	constructor(private route: ActivatedRoute, private employeesService: EmployeesService) {}
+	constructor(private route: ActivatedRoute, private employeesService: EmployeesService,
+				public dialog: MatDialog
+				) {}
 
 	ngOnInit() {
 		if (!this.route.snapshot.paramMap.has('employeeId')) return;
@@ -22,4 +26,7 @@ export class EmployeeDetailsComponent {
 		this.employee$ = this.employeesService.getEmployeeDetails(this.employeeId);
 	}
 
+	openDialog(): void {
+		this.dialog.open(CreateReportComponent, { data: { employeeId: this.employeeId } });
+	}
 }

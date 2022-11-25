@@ -14,7 +14,7 @@
 
 			<div class='manager-container' *ngIf="employee.managerId">
 				<manager-details [employeeId]="employeeId"></manager-details>
-				<input type='button' value='Report' class='report-button' />
+				<input type='button' value='Report' class='report-button' (click)='openDialog()'/>
 			</div>
 		</div>
 		<ng-template #loading>Loading...</ng-template>

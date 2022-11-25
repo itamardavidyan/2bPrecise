@@ -23,4 +23,9 @@ export class EmployeesService {
 
 		return allEmployees.find(employee => employee.id === managerId);;
 	}
+
+	async createEmployeeReport(employeeId: number, reportText: string) {
+		const { managerId } = await this.getEmployeeDetails(employeeId);
+		await db.push('/reports/', [{ managerId, employeeId, text: reportText, date: new Date() }], false);
+	}
 }

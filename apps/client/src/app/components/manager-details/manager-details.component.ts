@@ -19,6 +19,4 @@ export class ManagerDetailsComponent implements OnInit {
 		this.manager$ = this.employeesService.getEmployeeManager(this.employeeId);
 	}
 
-
-
 }
