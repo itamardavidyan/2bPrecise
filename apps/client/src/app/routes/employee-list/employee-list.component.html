@@ -12,7 +12,7 @@
 		<tr *ngFor="let employee of employees$ | async">
 			<td>{{ employee.firstName + ' ' + employee.lastName }}</td>
 			<td>{{ employee.position }}</td>
-			<td><input type='button' value='View' /></td>
+			<td><input type='button' value='View' [routerLink]="['/employee-details', employee.id]"></td>
 		</tr>
 	</tbody>
 </table>

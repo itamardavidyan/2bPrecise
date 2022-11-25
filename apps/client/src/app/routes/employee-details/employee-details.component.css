@@ -1,0 +1,35 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	padding: 30px;
+}
+
+.header {
+	display: flex;
+}
+
+.employee-image {
+	padding-right: 30px;
+	width: 150px;
+	height: 150px;
+}
+
+.employee-details {
+	display: flex;
+	flex-direction: column;
+	flex-grow: 2;
+}
+
+.employee-details > .row > span:first-child {
+	margin-right: 10px;
+}
+
+hr.solid {
+	border-top: 3px solid #bbb;
+	width: 100%;
+}
+
+.manager-container {
+	display: flex;
+	justify-content: space-between;
+}

@@ -4,13 +4,21 @@
 			"id": 1,
 			"firstName": "Itamar",
 			"lastName": "Davidyan",
-			"position": "Fullstack Developer"
+			"position": "Fullstack Developer",
+			"managerId": 2
 		},
 		{
 			"id": 2,
 			"firstName": "Alon",
 			"lastName": "Davidyan",
 			"position": "Senior Fullstack Developer"
+		},
+		{
+			"id": 3,
+			"firstName": "Matan",
+			"lastName": "Davidyan",
+			"position": "Analyst",
+			"managerId": 2
 		}
 	]
 }

@@ -1,0 +1,22 @@
+<div class='container'>
+	<div class='header'>
+		<img src='https://i.pravatar.cc/150?img={{employeeId}}' class='employee-image' />
+		<div class='employee-details' *ngIf="employee$ | async as employee; else loading">
+			<div class='row'>
+				<span>Name:</span>
+				<span>{{ employee.firstName + ' ' + employee.lastName }}</span>
+			</div>
+			<div class='row'>
+				<span>Position:</span>
+				<span>{{ employee.position }}</span>
+			</div>
+			<hr class='solid'>
+
+			<div class='manager-container' *ngIf="employee.managerId">
+				<manager-details [employeeId]="employeeId"></manager-details>
+				<input type='button' value='Report' class='report-button' />
+			</div>
+		</div>
+		<ng-template #loading>Loading...</ng-template>
+	</div>
+</div>

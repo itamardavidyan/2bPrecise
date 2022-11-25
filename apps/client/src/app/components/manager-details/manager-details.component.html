@@ -1,0 +1,5 @@
+<div class='row' *ngIf='manager$ | async as manager; else loading'>
+	<span>Manager:</span>
+	<span>{{ manager.firstName + ' ' + manager.lastName }}</span>
+</div>
+<ng-template #loading>Loading...</ng-template>

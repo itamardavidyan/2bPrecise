@@ -9,7 +9,7 @@ import { EmployeesService } from '../../services/employees.service';
 })
 export class EmployeeListComponent implements OnInit {
 
-	employees$: Observable<any> | undefined;
+	employees$!: Observable<any>;
 
 	constructor(private employeesService: EmployeesService) {}
 
