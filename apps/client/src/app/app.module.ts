@@ -8,14 +8,16 @@ import { appRoutes } from './app.routes';
 import { EmployeeListComponent } from './routes/employee-list/employee-list.component';
 import { EmployeeDetailsComponent } from './routes/employee-details/employee-details.component';
 import { ManagerDetailsComponent } from './components/manager-details/manager-details.component';
-import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button'
-import { MatCommonModule } from '@angular/material/core'
-import { MatInputModule } from '@angular/material/input'
+import { MatButtonModule } from '@angular/material/button';
+import { MatCommonModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateReportComponent } from './components/dialogs/create-report/create-report.component';
 import { FormsModule } from '@angular/forms';
+import { SubordinatesReportsComponent } from './components/subordinates-reports/subordinates-reports.component';
+import { ManagerSubordinatesComponent } from './components/manager-subordinates/manager-subordinates.component';
 
 @NgModule({
 	declarations: [
@@ -24,6 +26,8 @@ import { FormsModule } from '@angular/forms';
 		EmployeeDetailsComponent,
 		ManagerDetailsComponent,
 		CreateReportComponent,
+		SubordinatesReportsComponent,
+		ManagerSubordinatesComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -36,11 +40,8 @@ import { FormsModule } from '@angular/forms';
 		MatCommonModule,
 		MatInputModule,
 		MatFormFieldModule,
-  		BrowserAnimationsModule,
+		BrowserAnimationsModule,
 		FormsModule
-	],
-	providers: [
-		{provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}}
 	],
 	bootstrap: [AppComponent],
 })

@@ -1,7 +1,12 @@
 .container {
 	display: flex;
+	height: 100vh;
 	flex-direction: column;
-	padding: 30px;
+	justify-content: space-between;
+}
+
+.details {
+	padding: 30px 30px 0px;
 }
 
 .header {
@@ -32,4 +37,9 @@ hr.solid {
 .manager-container {
 	display: flex;
 	justify-content: space-between;
+}
+
+footer {
+	padding: 0px 30px 30px;
+	text-align: center;
 }

@@ -1,18 +1,20 @@
-<h1>Employee List</h1>
+<div class='container'>
+	<h1>Employee List</h1>
 
-<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Position</th>
-			<th>Actions</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let employee of employees$ | async">
-			<td>{{ employee.firstName + ' ' + employee.lastName }}</td>
-			<td>{{ employee.position }}</td>
-			<td><input type='button' value='View' [routerLink]="['/employee-details', employee.id]"></td>
-		</tr>
-	</tbody>
-</table>
+	<table>
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Position</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let employee of employees$ | async">
+				<td>{{ employee.firstName + ' ' + employee.lastName }}</td>
+				<td>{{ employee.position }}</td>
+				<td><input type='button' value='View' [routerLink]="['/employee-details', employee.id]"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

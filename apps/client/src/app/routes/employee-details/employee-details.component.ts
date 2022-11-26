@@ -6,7 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CreateReportComponent } from '../../components/dialogs/create-report/create-report.component';
 
 @Component({
-	selector: 'precise-employee-details',
+	selector: 'employee-details',
 	templateUrl: './employee-details.component.html',
 	styleUrls: ['./employee-details.component.css'],
 })

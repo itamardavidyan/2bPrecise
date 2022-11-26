@@ -1,4 +1,5 @@
 import { Injectable } from '@nestjs/common';
+import { Employee } from '@precise/interfaces';
 import { db } from '../../db/db';
 
 @Injectable()
@@ -8,7 +9,7 @@ export class EmployeesService {
 		return await db.getData('/employees');
 	}
 
-	async getEmployeeDetails(employeeId: number) {
+	async getEmployeeDetails(employeeId: number): Promise<Employee> {
 		const allEmployees = await db.getData('/employees');
 		return allEmployees.find(employee => employee.id === employeeId);
 	}

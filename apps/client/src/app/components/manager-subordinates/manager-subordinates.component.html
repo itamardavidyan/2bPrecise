@@ -1,0 +1,26 @@
+<div *ngIf="managerSubordinates$ | async as managerSubordinates; else loading">
+	<div *ngIf="managerSubordinates.length > 0; else noSubordinates">
+		<h3>My subordinates:</h3>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Position</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let employee of managerSubordinates">
+					<td>{{ employee.firstName + ' ' + employee.lastName }}</td>
+					<td>{{ employee.position }}</td>
+					<td><input type='button' value='Assign Task'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<ng-template #noSubordinates>No subordinates 🎢</ng-template>
+</div>
+
+<ng-template #loading>Loading...</ng-template>

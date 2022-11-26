@@ -1,0 +1,26 @@
+<div *ngIf="managerSubordinatesReports$ | async as managerSubordinatesReports; else loading">
+	<div *ngIf="managerSubordinatesReports.length > 0; else noSubordinatesReports">
+		<h3>My subordinates reports:</h3>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Employee Name</th>
+					<th>Text</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let report of managerSubordinatesReports">
+					<td>{{ report.employee.firstName + ' ' + report.employee.lastName }}</td>
+					<td>{{ report.text }}</td>
+					<td>{{ report.date }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<ng-template #noSubordinatesReports>No subordinates reports🎢</ng-template>
+</div>
+
+<ng-template #loading>Loading...</ng-template>
