@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateReportComponent } from './components/dialogs/create-report/create-report.component';
 import { FormsModule } from '@angular/forms';
-import { SubordinatesReportsComponent } from './components/subordinates-reports/subordinates-reports.component';
+import { ManagerSubordinatesReportsComponent } from './components/manager-subordinates-reports/manager-subordinates-reports.component';
 import { ManagerSubordinatesComponent } from './components/manager-subordinates/manager-subordinates.component';
 
 @NgModule({
@@ -26,7 +26,7 @@ import { ManagerSubordinatesComponent } from './components/manager-subordinates/
 		EmployeeDetailsComponent,
 		ManagerDetailsComponent,
 		CreateReportComponent,
-		SubordinatesReportsComponent,
+		ManagerSubordinatesReportsComponent,
 		ManagerSubordinatesComponent,
 	],
 	imports: [

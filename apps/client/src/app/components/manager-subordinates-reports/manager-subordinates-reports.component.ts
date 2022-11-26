@@ -5,11 +5,11 @@ import { Observable } from 'rxjs';
 import { ManagersService } from '../../services/managers.service';
 
 @Component({
-	selector: 'subordinates-reports',
-	templateUrl: './subordinates-reports.component.html',
-	styleUrls: ['./subordinates-reports.component.css'],
+	selector: 'manager-subordinates-reports',
+	templateUrl: './manager-subordinates-reports.component.html',
+	styleUrls: ['./manager-subordinates-reports.component.css'],
 })
-export class SubordinatesReportsComponent {
+export class ManagerSubordinatesReportsComponent {
 
 	employeeId!: number;
 	managerSubordinatesReports$!: Observable<ReportView[]>;
