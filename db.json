@@ -11,7 +11,8 @@
             "id": 2,
             "firstName": "Alon",
             "lastName": "Davidyan",
-            "position": "Senior Fullstack Developer"
+            "position": "Senior Fullstack Developer",
+            "managerId": 5
         },
         {
             "id": 3,
@@ -19,20 +20,58 @@
             "lastName": "Davidyan",
             "position": "Analyst",
             "managerId": 2
+        },
+        {
+            "id": 4,
+            "firstName": "Amotz",
+            "lastName": "Davidyan",
+            "position": "Designer",
+            "managerId": 2
+        },
+        {
+            "id": 5,
+            "firstName": "Uri",
+            "lastName": "Davidyan",
+            "position": "Equipment Warehouse Manager",
+            "managerId": 6
+        },
+        {
+            "id": 6,
+            "firstName": "Sara",
+            "lastName": "Davidyan",
+            "position": "Beautician"
         }
     ],
     "reports": [
         {
+            "managerId": 6,
+            "employeeId": 5,
+            "text": "Clean dishes",
+            "date": "2022-11-26T21:15:33.963Z"
+        },
+        {
             "managerId": 2,
-            "employeeId": 3,
-            "text": "1",
-            "date": "2022-11-25T21:56:16.067Z"
+            "employeeId": 1,
+            "text": "Create website",
+            "date": "2022-11-26T21:15:57.459Z"
         },
         {
             "managerId": 2,
             "employeeId": 3,
-            "text": "s",
-            "date": "2022-11-25T21:56:26.015Z"
+            "text": "Tell someone what to do",
+            "date": "2022-11-26T21:16:20.591Z"
+        },
+        {
+            "managerId": 2,
+            "employeeId": 4,
+            "text": "Design ad",
+            "date": "2022-11-26T21:16:46.175Z"
+        },
+        {
+            "managerId": 5,
+            "employeeId": 2,
+            "text": "Bake a cake",
+            "date": "2022-11-26T21:17:55.747Z"
         }
     ]
 }
