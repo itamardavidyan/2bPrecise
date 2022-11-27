@@ -11,7 +11,6 @@ import { EmployeesService } from '../../../services/employees.service';
 export class CreateReportComponent {
 
 	text!: string;
-	isLoading = false;
 
 	constructor(
 		private employeesService: EmployeesService,
@@ -24,10 +23,9 @@ export class CreateReportComponent {
 	}
 
 	save(): void {
-		this.isLoading = true;
 		this.employeesService.createReport(this.data.employeeId, this.text).subscribe(() => {
 			this.dialogRef.close();
-			this.isLoading = false;
 		})
 	}
+
 }

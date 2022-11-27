@@ -29,7 +29,7 @@ export class EmployeesService {
 		const { managerId } = await this.getEmployeeDetails(employeeId);
 		const allReports = await db.getData('/reports');
 		const lastReport = allReports.at(-1);
-		const id = lastReport.id + 1;
+		const id = (lastReport?.id || 0) + 1;
 
 		const report: Report = { id, managerId, employeeId, text: reportText, date: new Date() };
 		await db.push('/reports/', [report], false);

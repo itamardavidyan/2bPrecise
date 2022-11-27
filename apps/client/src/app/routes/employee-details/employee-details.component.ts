@@ -15,9 +15,7 @@ export class EmployeeDetailsComponent {
 	employeeId!: number;
 	employee$!: Observable<any>;
 
-	constructor(private route: ActivatedRoute, private employeesService: EmployeesService,
-				public dialog: MatDialog
-				) {}
+	constructor(private route: ActivatedRoute, private employeesService: EmployeesService, public dialog: MatDialog) {}
 
 	ngOnInit() {
 		if (!this.route.snapshot.paramMap.has('employeeId')) return;

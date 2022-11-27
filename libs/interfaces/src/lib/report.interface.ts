@@ -1,7 +1,7 @@
 import { Employee } from './employee.interface';
 
 interface ReportDetails {
-	text: number,
+	text: string,
 	date: Date
 }
 

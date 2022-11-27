@@ -1,5 +1,5 @@
-<div *ngIf="managerSubordinates$ | async as managerSubordinates; else loading">
-	<div *ngIf="managerSubordinates.length > 0; else noSubordinates">
+<div *ngIf='managerSubordinates$ | async as managerSubordinates; else loading'>
+	<div *ngIf='managerSubordinates.length > 0; else noSubordinates'>
 		<h3>My subordinates:</h3>
 
 		<table>
@@ -11,10 +11,10 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr *ngFor="let employee of managerSubordinates">
+				<tr *ngFor='let employee of managerSubordinates'>
 					<td>{{ employee.firstName + ' ' + employee.lastName }}</td>
 					<td>{{ employee.position }}</td>
-					<td><input type='button' value='Assign Task'></td>
+					<td><input type='button' value='Assign Task' (click)='openDialog(employee.id)'></td>
 				</tr>
 			</tbody>
 		</table>

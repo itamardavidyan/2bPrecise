@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Assign task</h1>
+
+<form [formGroup]='taskForm' (ngSubmit)='onFormSubmit()'>
+	<div mat-dialog-content>
+		<mat-form-field appearance='fill'>
+			<mat-label>Task text</mat-label>
+			<input matInput formControlName='text' required>
+		</mat-form-field>
+		<mat-form-field appearance='fill'>
+			<mat-label>Due date</mat-label>
+			<input matInput [min]='minDate' [matDatepicker]='picker' formControlName='dueDate' required>
+			<mat-hint>MM/DD/YYYY</mat-hint>
+			<mat-datepicker-toggle matIconSuffix [for]='picker'></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+		</mat-form-field>
+	</div>
+	<div mat-dialog-actions>
+		<button mat-button (click)='cancel()' type='button'>Cancel</button>
+		<button mat-button [disabled]='taskForm.invalid'>Save</button>
+	</div>
+</form>

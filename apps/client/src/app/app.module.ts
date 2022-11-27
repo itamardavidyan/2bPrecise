@@ -11,13 +11,18 @@ import { ManagerDetailsComponent } from './components/manager-details/manager-de
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
-import { MatCommonModule } from '@angular/material/core';
+import { MatCommonModule, MatNativeDateModule } from '@angular/material/core';
 import { MatInputModule } from '@angular/material/input';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateReportComponent } from './components/dialogs/create-report/create-report.component';
-import { FormsModule } from '@angular/forms';
+import { AssignTaskComponent } from './components/dialogs/assign-task/assign-task.component';
 import { ManagerSubordinatesReportsComponent } from './components/manager-subordinates-reports/manager-subordinates-reports.component';
 import { ManagerSubordinatesComponent } from './components/manager-subordinates/manager-subordinates.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import * as dayjs from 'dayjs';
+import * as utc from 'dayjs/plugin/utc';
+dayjs.extend(utc);
 
 @NgModule({
 	declarations: [
@@ -26,8 +31,9 @@ import { ManagerSubordinatesComponent } from './components/manager-subordinates/
 		EmployeeDetailsComponent,
 		ManagerDetailsComponent,
 		CreateReportComponent,
+		AssignTaskComponent,
 		ManagerSubordinatesReportsComponent,
-		ManagerSubordinatesComponent,
+		ManagerSubordinatesComponent
 	],
 	imports: [
 		BrowserModule,
@@ -39,9 +45,15 @@ import { ManagerSubordinatesComponent } from './components/manager-subordinates/
 		MatButtonModule,
 		MatCommonModule,
 		MatInputModule,
+		MatDatepickerModule,
+		MatNativeDateModule,
 		MatFormFieldModule,
 		BrowserAnimationsModule,
-		FormsModule
+		FormsModule,
+		ReactiveFormsModule
+	],
+	providers: [
+		MatDatepickerModule
 	],
 	bootstrap: [AppComponent],
 })

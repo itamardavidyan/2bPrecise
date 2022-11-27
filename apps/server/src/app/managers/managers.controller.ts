@@ -1,5 +1,5 @@
 import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
-import { Employee, Report } from '@precise/interfaces';
+import { Employee, ReportView } from '@precise/interfaces';
 import { ManagersService } from './managers.service';
 
 @Controller('managers')
@@ -13,7 +13,7 @@ export class ManagersController {
 	}
 
 	@Get('/:managerId/subordinates/reports')
-	public getManagerSubordinatesReports(@Param('managerId', ParseIntPipe) managerId: number): Promise<Report[]> {
+	public getManagerSubordinatesReports(@Param('managerId', ParseIntPipe) managerId: number): Promise<ReportView[]> {
 		return this.managersService.getManagerSubordinatesReports(managerId);
 	}
 }
