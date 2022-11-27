@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Employee } from 'libs/interfaces/src';
+import { IEmployee } from 'libs/interfaces/src';
 import { Observable } from 'rxjs';
 import { ManagersService } from '../../services/managers.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -14,7 +14,7 @@ import { AssignTaskComponent } from '../dialogs/assign-task/assign-task.componen
 export class ManagerSubordinatesComponent {
 
 	managerId!: number;
-	managerSubordinates$!: Observable<Employee[]>;
+	managerSubordinates$!: Observable<IEmployee[]>;
 
 	constructor(private route: ActivatedRoute, private managersService: ManagersService, public dialog: MatDialog) {}
 

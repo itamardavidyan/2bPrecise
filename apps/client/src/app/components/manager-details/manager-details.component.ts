@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Employee } from 'libs/interfaces/src';
+import { IEmployee } from 'libs/interfaces/src';
 import { Observable } from 'rxjs';
 import { EmployeesService } from '../../services/employees.service';
 
@@ -12,7 +12,7 @@ export class ManagerDetailsComponent implements OnInit {
 
 	@Input() employeeId!: number;
 
-	manager$!: Observable<Employee>;
+	manager$!: Observable<IEmployee>;
 
 	constructor(private employeesService: EmployeesService) {}
 

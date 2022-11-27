@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Task } from 'libs/interfaces/src';
+import { ITask } from 'libs/interfaces/src';
 import { Observable } from 'rxjs';
 import { EmployeesService } from '../../services/employees.service';
 
@@ -12,7 +12,7 @@ import { EmployeesService } from '../../services/employees.service';
 export class EmployeeTasksComponent {
 
 	employeeId!: number;
-	employeeTasks$!: Observable<Task[]>;
+	employeeTasks$!: Observable<ITask[]>;
 
 	constructor(private route: ActivatedRoute, private employeesService: EmployeesService) {}
 

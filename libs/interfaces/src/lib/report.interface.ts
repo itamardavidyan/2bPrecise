@@ -1,16 +1,16 @@
-import { Employee } from './employee.interface';
+import { IEmployee } from './employee.interface';
 
-interface ReportDetails {
+interface IReportDetails {
 	text: string,
 	date: Date
 }
 
-export interface Report extends ReportDetails {
+export interface IReport extends IReportDetails {
 	id: number,
 	employeeId: number,
 	managerId: number
 }
 
-export interface ReportView extends ReportDetails {
-	employee: Employee;
+export interface IReportView extends IReportDetails {
+	employee: IEmployee;
 }

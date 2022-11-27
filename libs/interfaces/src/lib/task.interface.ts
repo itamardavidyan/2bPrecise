@@ -1,4 +1,4 @@
-export interface Task {
+export interface ITask {
 	id: number,
 	text: string,
 	createdAt: Date,
@@ -7,7 +7,7 @@ export interface Task {
 	managerId: number
 }
 
-export interface CreateTask {
+export interface ICreateTask {
 	text: string,
 	dueDate: string,
 	employeeId: number,

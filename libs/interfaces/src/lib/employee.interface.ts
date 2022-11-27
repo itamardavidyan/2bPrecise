@@ -1,5 +1,5 @@
-import { Person } from './person.interface';
+import { IPerson } from './person.interface';
 
-export interface Employee extends Person {
+export interface IEmployee extends IPerson {
 	managerId: number
 }

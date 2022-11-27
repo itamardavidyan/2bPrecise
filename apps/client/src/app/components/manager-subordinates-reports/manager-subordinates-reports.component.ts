@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ReportView } from 'libs/interfaces/src';
+import { IReportView } from 'libs/interfaces/src';
 import { Observable } from 'rxjs';
 import { ManagersService } from '../../services/managers.service';
 
@@ -12,7 +12,7 @@ import { ManagersService } from '../../services/managers.service';
 export class ManagerSubordinatesReportsComponent {
 
 	employeeId!: number;
-	managerSubordinatesReports$!: Observable<ReportView[]>;
+	managerSubordinatesReports$!: Observable<IReportView[]>;
 
 	constructor(private route: ActivatedRoute, private managersService: ManagersService) {}
 
