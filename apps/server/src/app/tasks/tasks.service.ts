@@ -6,7 +6,7 @@ import { db } from '../../db/db';
 @Injectable()
 export class TasksService {
 
-	async createTask(task: CreateTask) {
+	async createTask(task: CreateTask): Promise<void> {
 		const allTasks = await db.getData('/tasks');
 		const lastTask = allTasks.at(-1);
 		const id = (lastTask?.id || 0) + 1;

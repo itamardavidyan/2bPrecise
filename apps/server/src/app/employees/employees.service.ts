@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
-import { Employee, Report } from '@precise/interfaces';
+import { Employee, Report, Task } from '@precise/interfaces';
 import { db } from '../../db/db';
 
 @Injectable()
 export class EmployeesService {
 
-	async getAllEmployees() {
+	async getAllEmployees(): Promise<Employee[]> {
 		return await db.getData('/employees');
 	}
 
@@ -14,7 +14,7 @@ export class EmployeesService {
 		return allEmployees.find(employee => employee.id === employeeId);
 	}
 
-	async getEmployeeManager(employeeId: number) {
+	async getEmployeeManager(employeeId: number): Promise<Employee> {
 		const allEmployees = await db.getData('/employees');
 		const employee = allEmployees.find(employee => employee.id === employeeId);
 		if (!employee) return;
@@ -25,7 +25,7 @@ export class EmployeesService {
 		return allEmployees.find(employee => employee.id === managerId);;
 	}
 
-	async createEmployeeReport(employeeId: number, reportText: string) {
+	async createEmployeeReport(employeeId: number, reportText: string): Promise<void> {
 		const { managerId } = await this.getEmployeeDetails(employeeId);
 		const allReports = await db.getData('/reports');
 		const lastReport = allReports.at(-1);
@@ -35,7 +35,7 @@ export class EmployeesService {
 		await db.push('/reports/', [report], false);
 	}
 
-	async getEmployeeTasks(employeeId: number) {
+	async getEmployeeTasks(employeeId: number): Promise<Task[]>{
 		const allTasks = await db.getData('/tasks');
 		return allTasks.filter(task => task.employeeId === employeeId);
 	}

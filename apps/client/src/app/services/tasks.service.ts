@@ -10,8 +10,8 @@ export class TasksService {
 
   	constructor(private http: HttpClient) { }
 
-	public createTask(task: CreateTask): Observable<any> {
-		return this.http.post(`http://localhost:3333/api/tasks`, task);
+	public createTask(task: CreateTask): Observable<void> {
+		return this.http.post<void>(`http://localhost:3333/api/tasks`, task);
 	}
 
 }

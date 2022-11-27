@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { EmployeesService } from '../../services/employees.service';
 import { MatDialog } from '@angular/material/dialog';
 import { CreateReportComponent } from '../../components/dialogs/create-report/create-report.component';
+import { Employee } from 'libs/interfaces/src';
 
 @Component({
 	selector: 'employee-details',
@@ -13,7 +14,7 @@ import { CreateReportComponent } from '../../components/dialogs/create-report/cr
 export class EmployeeDetailsComponent {
 
 	employeeId!: number;
-	employee$!: Observable<any>;
+	employee$!: Observable<Employee>;
 
 	constructor(private route: ActivatedRoute, private employeesService: EmployeesService, public dialog: MatDialog) {}
 
