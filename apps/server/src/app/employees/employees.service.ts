@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { Employee } from '@precise/interfaces';
+import { Employee, Report } from '@precise/interfaces';
 import { db } from '../../db/db';
 
 @Injectable()
@@ -27,6 +27,11 @@ export class EmployeesService {
 
 	async createEmployeeReport(employeeId: number, reportText: string) {
 		const { managerId } = await this.getEmployeeDetails(employeeId);
-		await db.push('/reports/', [{ managerId, employeeId, text: reportText, date: new Date() }], false);
+		const allReports = await db.getData('/reports');
+		const lastReport = allReports.at(-1);
+		const id = lastReport.id + 1;
+
+		const report: Report = { id, managerId, employeeId, text: reportText, date: new Date() };
+		await db.push('/reports/', [report], false);
 	}
 }

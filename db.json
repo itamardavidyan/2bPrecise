@@ -44,34 +44,40 @@
     ],
     "reports": [
         {
+            "id": 1,
             "managerId": 6,
             "employeeId": 5,
             "text": "Clean dishes",
             "date": "2022-11-26T21:15:33.963Z"
         },
         {
+            "id": 2,
             "managerId": 2,
             "employeeId": 1,
             "text": "Create website",
             "date": "2022-11-26T21:15:57.459Z"
         },
         {
+            "id": 3,
             "managerId": 2,
             "employeeId": 3,
             "text": "Tell someone what to do",
             "date": "2022-11-26T21:16:20.591Z"
         },
         {
+            "id": 4,
             "managerId": 2,
             "employeeId": 4,
             "text": "Design ad",
             "date": "2022-11-26T21:16:46.175Z"
         },
         {
+            "id": 5,
             "managerId": 5,
             "employeeId": 2,
             "text": "Bake a cake",
             "date": "2022-11-26T21:17:55.747Z"
         }
-    ]
+    ],
+    "tasks": []
 }

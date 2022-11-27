@@ -6,6 +6,7 @@ interface ReportDetails {
 }
 
 export interface Report extends ReportDetails {
+	id: number,
 	employeeId: number,
 	managerId: number
 }
