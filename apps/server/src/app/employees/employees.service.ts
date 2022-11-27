@@ -1,42 +1,37 @@
 import { Injectable } from '@nestjs/common';
-import { IEmployee, IReport, ITask } from '@precise/interfaces';
-import { db } from '../../db/db';
+import { IEmployee, ITask } from '@precise/interfaces';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { Employee, Report } from '../../entities';
 
 @Injectable()
 export class EmployeesService {
 
+	constructor(@InjectRepository(Employee) private employeesRepository: Repository<Employee>,
+				@InjectRepository(Report) private reportsRepository: Repository<Report>) {}
+
 	async getAllEmployees(): Promise<IEmployee[]> {
-		return await db.getData('/employees');
+		return await this.employeesRepository.find();
 	}
 
 	async getEmployeeDetails(employeeId: number): Promise<IEmployee> {
-		const allEmployees = await db.getData('/employees');
-		return allEmployees.find(employee => employee.id === employeeId);
+		return await this.employeesRepository.findOne({ where: { id: employeeId } })
 	}
 
 	async getEmployeeManager(employeeId: number): Promise<IEmployee> {
-		const allEmployees = await db.getData('/employees');
-		const employee = allEmployees.find(employee => employee.id === employeeId);
-		if (!employee) return;
-
-		const { managerId } = employee;
-		if (!managerId) return;
-
-		return allEmployees.find(employee => employee.id === managerId);;
+		const employee = await this.employeesRepository.findOne({ where: { id: employeeId }, relations: { manager: true } });
+		return employee.manager;
 	}
 
 	async createEmployeeReport(employeeId: number, reportText: string): Promise<void> {
-		const { managerId } = await this.getEmployeeDetails(employeeId);
-		const allReports = await db.getData('/reports');
-		const lastReport = allReports.at(-1);
-		const id = (lastReport?.id || 0) + 1;
+		const { managerId } = await this.employeesRepository.findOne({ where: { id: employeeId } })
 
-		const report: IReport = { id, managerId, employeeId, text: reportText, date: new Date() };
-		await db.push('/reports/', [report], false);
+		const report = { manager: { id: managerId }, employee: { id: employeeId }, text: reportText, createdAt: new Date() };
+		await this.reportsRepository.save(report);
 	}
 
-	async getEmployeeTasks(employeeId: number): Promise<ITask[]>{
-		const allTasks = await db.getData('/tasks');
-		return allTasks.filter(task => task.employeeId === employeeId);
+	async getEmployeeTasks(employeeId: number): Promise<ITask[]> {
+		const { tasks } = await this.employeesRepository.findOne({ where: { id: employeeId }, relations: ['tasks'] });
+		return tasks;
 	}
 }

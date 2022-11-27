@@ -2,7 +2,7 @@ import { IEmployee } from './employee.interface';
 
 interface IReportDetails {
 	text: string,
-	date: Date
+	createdAt: Date
 }
 
 export interface IReport extends IReportDetails {

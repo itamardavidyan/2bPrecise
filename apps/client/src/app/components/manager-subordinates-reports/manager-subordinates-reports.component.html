@@ -14,7 +14,7 @@
 				<tr *ngFor="let report of managerSubordinatesReports">
 					<td>{{ report.employee.firstName + ' ' + report.employee.lastName }}</td>
 					<td>{{ report.text }}</td>
-					<td>{{ report.date }}</td>
+					<td>{{ report.createdAt }}</td>
 				</tr>
 			</tbody>
 		</table>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IReportView } from 'libs/interfaces/src';
 import { Observable } from 'rxjs';
@@ -9,7 +9,7 @@ import { ManagersService } from '../../services/managers.service';
 	templateUrl: './manager-subordinates-reports.component.html',
 	styleUrls: ['./manager-subordinates-reports.component.css'],
 })
-export class ManagerSubordinatesReportsComponent {
+export class ManagerSubordinatesReportsComponent implements OnInit {
 
 	employeeId!: number;
 	managerSubordinatesReports$!: Observable<IReportView[]>;
