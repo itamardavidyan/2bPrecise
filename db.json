@@ -79,5 +79,38 @@
             "date": "2022-11-26T21:17:55.747Z"
         }
     ],
-    "tasks": []
+    "tasks": [
+        {
+            "id": 1,
+            "text": "Come in dream",
+            "createdAt": "2022-11-27T11:15:13.946Z",
+            "dueDate": "2022-11-29T22:00:00.000Z",
+            "employeeId": 2,
+            "managerId": 5
+        },
+        {
+            "id": 2,
+            "text": "Do your assignment",
+            "createdAt": "2022-11-27T11:21:37.009Z",
+            "dueDate": "2022-11-27T22:00:00.000Z",
+            "employeeId": 1,
+            "managerId": 2
+        },
+        {
+            "id": 3,
+            "text": "Sign on contract",
+            "createdAt": "2022-11-27T11:22:16.105Z",
+            "dueDate": "2022-11-29T22:00:00.000Z",
+            "employeeId": 1,
+            "managerId": 2
+        },
+        {
+            "id": 4,
+            "text": "Eat sleep code repeat",
+            "createdAt": "2022-11-27T11:22:55.092Z",
+            "dueDate": "2045-12-30T22:00:00.000Z",
+            "employeeId": 1,
+            "managerId": 2
+        }
+    ]
 }

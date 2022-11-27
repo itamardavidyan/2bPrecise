@@ -1,4 +1,5 @@
 import { Body, Controller, Get, Param, ParseIntPipe, Post } from '@nestjs/common';
+import { Task } from '@precise/interfaces';
 import { EmployeesService  } from './employees.service';
 
 @Controller('employees')
@@ -24,5 +25,10 @@ export class EmployeesController {
 	@Post('/:employeeId/report')
 	public createEmployeeReport(@Param('employeeId', ParseIntPipe) employeeId: number, @Body('text') text: string): Promise<void> {
 		return this.employeesService.createEmployeeReport(employeeId, text);
+	}
+
+	@Get('/:employeeId/tasks')
+	public getEmployeeTasks(@Param('employeeId', ParseIntPipe) employeeId: number): Promise<Task[]> {
+		return this.employeesService.getEmployeeTasks(employeeId)
 	}
 }

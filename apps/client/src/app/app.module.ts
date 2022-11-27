@@ -22,6 +22,7 @@ import { ManagerSubordinatesComponent } from './components/manager-subordinates/
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import * as dayjs from 'dayjs';
 import * as utc from 'dayjs/plugin/utc';
+import { EmployeeTasksComponent } from './components/employee-tasks/employee-tasks.component';
 dayjs.extend(utc);
 
 @NgModule({
@@ -33,7 +34,8 @@ dayjs.extend(utc);
 		CreateReportComponent,
 		AssignTaskComponent,
 		ManagerSubordinatesReportsComponent,
-		ManagerSubordinatesComponent
+		ManagerSubordinatesComponent,
+		EmployeeTasksComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -50,11 +52,9 @@ dayjs.extend(utc);
 		MatFormFieldModule,
 		BrowserAnimationsModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
 	],
-	providers: [
-		MatDatepickerModule
-	],
+	providers: [MatDatepickerModule],
 	bootstrap: [AppComponent],
 })
 export class AppModule {}

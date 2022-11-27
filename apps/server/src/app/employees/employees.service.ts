@@ -34,4 +34,9 @@ export class EmployeesService {
 		const report: Report = { id, managerId, employeeId, text: reportText, date: new Date() };
 		await db.push('/reports/', [report], false);
 	}
+
+	async getEmployeeTasks(employeeId: number) {
+		const allTasks = await db.getData('/tasks');
+		return allTasks.filter(task => task.employeeId === employeeId);
+	}
 }

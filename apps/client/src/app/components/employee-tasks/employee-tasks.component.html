@@ -1,0 +1,24 @@
+<div *ngIf='employeeTasks$ | async as employeeTasks; else loading'>
+	<div *ngIf='employeeTasks.length > 0; else noSubordinates'>
+		<h3>My tasks:</h3>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Text</th>
+					<th>Due date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor='let task of employeeTasks'>
+					<td>{{ task.text }}</td>
+					<td>{{ task.dueDate | date:'dd/MM/YYY' }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<ng-template #noSubordinates>No tasks ✅</ng-template>
+</div>
+
+<ng-template #loading>Loading...</ng-template>
